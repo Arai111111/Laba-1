@@ -1,0 +1,45 @@
+class Math():
+  
+  @staticmethod
+  def addition(a, b):
+    print(a+b)
+
+  @staticmethod
+  def multiplication(a, b):
+    print(a*b)
+
+  @staticmethod
+  def division(a, b):
+    if b == 0:
+      print("Деление на ноль невозможно.")
+    else:
+      print(a/b)
+
+  @staticmethod
+  def subtraction(a, b):
+    print(a-b)
+
+  @staticmethod
+  def start():
+    try:
+      a = float(input("Введите первое число -> "))
+      b = float(input("Введите второе число -> "))
+      c = input("Введите знак -> ")
+      Math.variation(a, b, c)
+    except ValueError:
+      print("Ошибка: Некорректный ввод чисел.")
+
+  @staticmethod
+  def variation(a, b, c):
+    if c == "+":
+      Math.addition(a, b)
+    elif c == "-":
+      Math.subtraction(a, b)
+    elif c == "*":
+      Math.multiplication(a, b)
+    elif c == "/":
+      Math.division(a, b)
+    else:
+      print("Вы ввели некорректный знак операции.")
+          
+Math.start()
